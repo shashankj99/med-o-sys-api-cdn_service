@@ -1,0 +1,17 @@
+{
+  "name": "cdn_esrvice",
+  "version": "1.0.0",
+  "description": "Node js API for file upload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shashank Jha",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "jimp": "^0.16.1"
+  }
+}
