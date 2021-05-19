@@ -51,3 +51,27 @@ exports.getUploadedImage = (req, res) => {
         return res.status(400)
             .json({'message': 'Unable to find the file'});
 }
+
+/**
+ * Method to remove image from the server
+ * @param req
+ * @param res
+ * @returns {any}
+ */
+exports.deleteUploadedImage = (req, res) => {
+    // get the image param and file path
+    const image = req.params.image,
+        filePath = path.join(__dirname, `../${AVATAR_PATH}${image}`);
+
+    // check if file exists
+    if (fs.existsSync(filePath)) {
+        // delete the image from the server
+        fs.unlinkSync(filePath);
+
+        return res.status(200)
+            .json({'message': 'Image removed successfully'});
+    } else
+        // return 400 error
+        return res.status(400)
+            .json({'message': 'Unable to find the file'});
+}
