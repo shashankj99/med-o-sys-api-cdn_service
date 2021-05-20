@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
         });
 })
 
-router.post('/upload/image', validateUploadImage, isRequestValidated, uploadImage);
+router.post('/upload/avatar/image', validateUploadImage, isRequestValidated, uploadImage);
 router.get('/image/avatar/:image', getUploadedImage);
 router.get('/remove/image/avatar/:image', deleteUploadedImage);
 
